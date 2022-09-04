@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Добавление книги {% endblock %}
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <h2>Добавление книги</h2>
+      <form id="create-form" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Создать!">
+        <div id="errors_list" style="background-color: black; color: red"></div>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block validator %}
+  <script src="{% static 'books/js/validator.js' %}"></script>
+{% endblock %}

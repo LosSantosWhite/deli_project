@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Список книг{% endblock %}
+{% block content %}
+  <div class="container">
+    <div class="row">
+      {% for book in books %}
+        <div class="col-4">
+          <h2>
+            <a href="{% url 'books:detail_view' book.id %}">{{ book.name }}</a>
+          </h2>
+          <p>{{ book.author.username }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

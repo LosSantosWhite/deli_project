@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Книга - {{ book.name }}{% endblock %}
+{% block content %}
+
+  <div class="container">
+    <h1>{{ book.name }}</h1>
+    <p>Автор - <b>{{ book.author.username }}</b></p>
+  </div>
+
+{% endblock %}

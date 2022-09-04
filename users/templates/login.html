@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Авторизация {% endblock %}
+{% block content %}
+  <div class="container">
+    <h2>Авторизация</h2>
+    <form class='validForm' id='login-form' humanReadable='Форма авторизации' method='post' action=''>
+      {% csrf_token %}
+      {{ form.username.label_tag }}<br>
+      {{ form.username }}<br>
+      {{ form.password.label_tag }} <br>
+      {{ form.password }}<br>
+
+      <input id="btnLogin" type="submit">
+    </form>
+      <div id="errors_list" class='validation_info' style="background-color: black; color: red; margin-top: auto"></div>
+  </div>
+
+{% endblock content %}
+{% block validator %}
+<script src="{% static 'users/js/validator.js' %}"></script>
+{% endblock %}
